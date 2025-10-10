@@ -25,23 +25,23 @@ public class MisteriLaundryKosan {
  * Bisakah kamu menebak, berapa jam sebenarnya mesin itu bekerja?
  *
  * (Hati-hati — katanya kalau kamu salah hitung,
- * mesin pengeringnya bisa tiba-tiba nyanyi lagu “Cinta Dalam Seprai.”)
+ * mesin pengeringnya bisa tiba-tiba nyanyi lagu “Cinta Dalam Mesin Cuci.”)
  */
     public static int hitungWaktuMisterius(String[] pakaian) {
-        return 0;
+        //buat logika mesinmu disini
+        //semua clue ada di catatan
+        return 0;//0 sepertinya bukan jawaban yang tepat
     }
 
     public static void main(String[] args) {
         String[] pesanan1 = {"Kaos", "Celana", "Jaket", "Kaos"};
         System.out.println("Pesanan 1: " + hitungWaktuMisterius(pesanan1)); 
-        // Harusnya keluar: 11
+
 
         String[] pesanan2 = {"Kaos", "Kaos", "Celana", "Jaket", "Kaos", "Celana", "Celana", "Kaos"};
         System.out.println("Pesanan 2: " + hitungWaktuMisterius(pesanan2)); 
-        // Harusnya keluar: 20
 
         String[] pesanan3 = {"Jaket", "Jaket", "Celana"};
         System.out.println("Pesanan 3: " + hitungWaktuMisterius(pesanan3));
-        // Harusnya keluar: 13
     }
 }
