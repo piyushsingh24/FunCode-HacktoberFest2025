@@ -9,12 +9,12 @@ public class MisteriLaundryKosan {
  *
  * Dari pengakuan para penghuni kos:
  *
- * - Setiap "Kaos" butuh waktu 2 jam untuk dikeringkan.
- * - "Celana" butuh 3 jam, karena katanya bahan jeansnya suka ngambek.
- * - "Jaket" lebih lama lagi, 5 jam — apalagi kalau ada kenangan di saku.
- * - Tapi setiap kali ada 4 pakaian dititipkan sekaligus,
- *   jam kerja mesin pengering entah bagaimana jadi lebih efisien.
- *   Total waktu pengerjaan berkurang setara dengan 1 jam kerja penuh.
+ *! - Setiap "Kaos" butuh waktu 2 jam untuk dikeringkan.
+ *! - "Celana" butuh 3 jam, karena katanya bahan jeansnya suka ngambek.
+ *! - "Jaket" lebih lama lagi, 5 jam — apalagi kalau ada kenangan di saku.
+ *? - Tapi setiap kali ada 4 pakaian dititipkan sekaligus,
+ **   jam kerja mesin pengering entah bagaimana jadi lebih efisien.
+ **   Total waktu pengerjaan berkurang setara dengan 1 jam kerja penuh.
  *
  * Misal: Kalau kamu titip 8 pakaian, berarti efisiensi terjadi 2 kali,
  * jadi waktu totalnya berkurang 2 jam.
@@ -29,8 +29,31 @@ public class MisteriLaundryKosan {
  */
     public static int hitungWaktuMisterius(String[] pakaian) {
         //buat logika mesinmu disini
+        int jam= 0;
+        for (int i = 0; i < pakaian.length; i++) {
+            switch (pakaian[i]) {
+                case "Kaos":
+                    jam += 2;
+                    break;
+                case "Celana":
+                    jam += 3;
+                    break;
+                case "Jaket":
+                    jam += 5;
+                    break;
+            
+                default:
+                    break;
+            }
+        }
+
+        if (pakaian.length % 4 == 0) {
+            jam -= (pakaian.length/4);
+        }
+
         //semua clue ada di catatan
-        return 0;//0 sepertinya bukan jawaban yang tepat
+
+        return jam;//0 sepertinya bukan jawaban yang tepat
     }
 
     public static void main(String[] args) {
