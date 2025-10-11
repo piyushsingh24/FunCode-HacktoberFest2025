@@ -28,32 +28,8 @@ public class MisteriLaundryKosan {
  * mesin pengeringnya bisa tiba-tiba nyanyi lagu “Cinta Dalam Mesin Cuci.”)
  */
     public static int hitungWaktuMisterius(String[] pakaian) {
-        //buat logika mesinmu disini
-        int jam= 0;
-        for (int i = 0; i < pakaian.length; i++) {
-            switch (pakaian[i]) {
-                case "Kaos":
-                    jam += 2;
-                    break;
-                case "Celana":
-                    jam += 3;
-                    break;
-                case "Jaket":
-                    jam += 5;
-                    break;
-            
-                default:
-                    break;
-            }
-        }
 
-        if (pakaian.length % 4 == 0) {
-            jam -= (pakaian.length/4);
-        }
-
-        //semua clue ada di catatan
-
-        return jam;//0 sepertinya bukan jawaban yang tepat
+        return 0;//0 sepertinya bukan jawaban yang tepat
     }
 
     public static void main(String[] args) {
