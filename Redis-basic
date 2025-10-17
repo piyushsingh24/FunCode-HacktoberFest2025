@@ -1,0 +1,48 @@
+const clinet = require('./client')
+
+async function init(){
+  const value = await clinet.get("user:3")
+  console.log("value  is -> " , value)
+}
+
+async function increaseCounter() {
+  const value = await clinet.incrby("count" , "10")
+  console.log("the Counter is -> ", value)
+}
+
+
+async function counterZero() {
+  let value = await clinet.set("count" , "0")
+  value = await clinet.get("count")
+  value = await clinet.incr("count")
+  console.log("the counter set to -> " , value)
+}
+
+
+async function list() {
+  // let value = await clinet.lpush("message:2" , "mera name is piyush singh" )
+  let value = await clinet.lrange("message:1" , "0" , "-1")
+  console.log(value)
+
+}
+
+
+async function Hset() {
+  await clinet.hset(
+    "bike:3" , {
+      model : "splendor",
+      type:"hero",
+      price : 287342,
+    }
+  )
+
+  let model = await clinet.hget("bike:3" , 'model')
+  console.log(await clinet.hget("bike:3" , "price"))
+  console.log(model)
+}
+
+// init()
+// increaseCounter()
+// counterZero()
+// list()
+Hset()
